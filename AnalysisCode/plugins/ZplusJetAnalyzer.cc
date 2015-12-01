@@ -54,7 +54,7 @@ ZplusJetAnalyzer::ZplusJetAnalyzer(const edm::ParameterSet& iConfig) :
   if (isJPTJet)  jptJetsToken_   = consumes<reco::JPTJetCollection>(mInputCollection);
   if (isPFJet)   {
     if(std::string("Pu")==UEAlgo) basicJetsToken_    = consumes<reco::BasicJetCollection>(mInputCollection);
-    if(std::string("Vs")==UEAlgo) pfJetsToken_    = consumes<reco::PFJetCollection>(mInputCollection);
+    if(std::string("Vs")==UEAlgo || std::string("pp")==UEAlgo) pfJetsToken_    = consumes<reco::PFJetCollection>(mInputCollection);
   }
 
   // pfCandToken_ = consumes<reco::PFCandidateCollection>(mInputPFCandCollection);
